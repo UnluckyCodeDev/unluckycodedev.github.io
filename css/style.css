@@ -517,3 +517,179 @@ p {
 .project-links .btn {
   flex: 0 1 auto;
 }
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-content {
+  max-width: 70ch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-content p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   EXPERIENCE / TIMELINE
+   ========================================================= */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
+}
+
+/* Vertical accent line running through the timeline */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom,
+              var(--accent) 0%,
+              var(--border) 100%);
+  opacity: 0.4;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: var(--space-5);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* Timeline node dot */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.timeline-item-no-media {
+  grid-template-columns: 1fr;
+}
+
+.timeline-media {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
+  background-color: var(--bg-elev-2);
+}
+
+.timeline-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-1);
+}
+
+.timeline-meta {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+.timeline-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.timeline-body li {
+  position: relative;
+  padding-left: var(--space-4);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-body li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.skill-group {
+  background-color: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-group li {
+  background-color: var(--bg-elev-2);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+/* =========================================================
+   RESPONSIVE — experience & skills on mobile
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-media {
+    max-width: 320px;
+  }
+
+  .timeline-body h3 {
+    margin-top: var(--space-2);
+  }
+}
