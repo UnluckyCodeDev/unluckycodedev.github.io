@@ -3,9 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Under Construction</title>
+  <title>Gabriel Latchieu — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Gabriel Latchieu: projects in software, electronics, and home electrification tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Portfolio coming soon.</h1>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#hero" class="nav-logo">Gabriel Latchieu</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow">Engineering Student · Builder</p>
+        <h1>Gabriel Latchieu</h1>
+        <p class="hero-tagline">
+          Building software and hardware tools for home electrification and
+          the energy transition — one project at a time.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/headshot.webp" alt="Gabriel Latchieu headshot" width="400" height="400" loading="eager">
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section container">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <p>
+          I'm Gabriel Latchieu, a grade 12 student in Mississauga, Ontario with a
+          current grade 12 average of 96%. I'm passionate about the intersection of
+          software, hardware, and energy — specifically, how technology can make
+          home electrification (heat pumps, retrofits, rebates) simpler and more
+          accessible for contractors and homeowners.
+        </p>
+        <p>
+          My interest in engineering started with a simple question: how could a
+          tool save a contractor time when sizing a heat pump or figuring out
+          what rebates apply? That question became my first two projects, and
+          it's the thread that connects everything I build.
+        </p>
+        <p>
+          Outside of coding, I serve as the lead altar server at Cristo Rei Parish
+          in Mississauga, where I coordinate a team of 90 servers, organize the
+          summer camp, and assist the priest during mass. I'm currently applying
+          to engineering programs for Fall 2027 admission, with a focus on
+          computer and electrical engineering.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        A mix of self-directed software projects and a hands-on hardware build.
+      </p>
+
+      <div class="project-grid">
+
+        <!-- Heat Pump Sizer -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/img/heatpump-sizer.webp" alt="Screenshot of the Heat Pump Sizer tool interface" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Heat Pump Sizer</h3>
+            <p class="project-tags">Python · HTML · CSS · JavaScript</p>
+            <p>
+              A web tool that helps homeowners and contractors estimate the
+              right heat pump capacity for a home. Built to self-learn multiple
+              languages end-to-end and to make a real step toward simplifying
+              electrification decisions.
+            </p>
+            <div class="project-video">
+              <video controls preload="metadata" playsinline>
+                <source src="assets/vid/heatpump-sizer-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/UnluckyCodeDev/heat-pump-sizer" class="btn btn-sm btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+              <a href="https://unluckycodedev.github.io/heat-pump-sizer/" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ontario Rebates -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/img/ontario-rebates.webp" alt="Screenshot of the Ontario Rebates CSV output" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Ontario Rebates</h3>
+            <p class="project-tags">Python</p>
+            <p>
+              A Python script that scans a structured JSON dataset of Ontario
+              home-electrification rebates and outputs a clean CSV table, so
+              contractors and homeowners can quickly see what's available
+              without digging through government pages.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/UnluckyCodeDev/ontario-rebates" class="btn btn-sm btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Arduino Catapult -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/img/arduino-catapult-1.webp" alt="Arduino-powered catapult with adjustable potentiometers" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Arduino Adjustable Catapult</h3>
+            <p class="project-tags">Arduino · C++ · Physics · Technical Writing</p>
+            <p>
+              A grade 11 physics capstone: an Arduino-controlled catapult with
+              potentiometers for launch angle, release angle, and spring tension.
+              Paired with a 60-page technical report deriving the underlying
+              projectile, kinematic, and rotational mechanics.
+            </p>
+            <div class="project-video">
+              <video controls preload="metadata" playsinline>
+                <source src="assets/vid/arduino-catapult-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-links">
+              <a href="assets/pdf/catapult-report.pdf" class="btn btn-sm btn-primary" target="_blank" rel="noopener">View Full Report (PDF)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Portfolio Site -->
+        <article class="project-card">
+          <div class="project-media">
+            <!-- TODO: replace with final screenshot once site is styled -->
+            <img src="assets/img/portfolio-site.webp" alt="Screenshot of this portfolio site" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>This Portfolio Site</h3>
+            <p class="project-tags">HTML · CSS · Vanilla JavaScript · GitHub Pages</p>
+            <p>
+              A self-built static portfolio deployed to GitHub Pages. No
+              frameworks — just semantic HTML, hand-written CSS, and vanilla JS,
+              with an iterative commit history documenting the build.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/UnluckyCodeDev/unluckycodedev.github.io" class="btn btn-sm btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section container">
+      <h2 class="section-title">Experience &amp; Leadership</h2>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div class="timeline-media">
+            <img src="assets/img/altar-server-1.webp" alt="Gabriel giving a speech on Catholic teachings to young altar servers" loading="lazy">
+          </div>
+          <div class="timeline-body">
+            <h3>Lead Altar Server (Acolyte)</h3>
+            <p class="timeline-meta">Cristo Rei Parish · Mississauga, ON · 2024–Present</p>
+            <ul>
+              <li>Selected as lead altar server; responsible for organizing and mentoring a team of 90 servers.</li>
+              <li>Plan and run the annual summer camp for all altar servers.</li>
+              <li>Set up for mass, assist the priest, and support parishioners with directions and questions.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item timeline-item-no-media">
+          <div class="timeline-body">
+            <h3>Math &amp; Coding Club Member</h3>
+            <p class="timeline-meta">St. Francis Xavier Secondary School · Sept 2023–Present</p>
+            <ul>
+              <li>Preparing for the CSMC (Canadian Senior Mathematics Contest) and Euclid Contest.</li>
+              <li>Active in the school's coding club, collaborating on programming problems and side projects.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>C++ (Arduino)</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Tools</h3>
+          <ul>
+            <li>Git &amp; GitHub</li>
+            <li>VS Code</li>
+            <li>Arduino IDE</li>
+            <li>GitHub Pages</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Other</h3>
+          <ul>
+            <li>Technical writing (60-page report)</li>
+            <li>Team leadership (90-person team)</li>
+            <li>Self-directed learning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Best ways to reach me. References available upon request.
+      </p>
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:glatchieu09@gmail.com">
+          <h3>Email</h3>
+          <p>glatchieu09@gmail.com</p>
+        </a>
+        <a class="contact-card" href="https://github.com/UnluckyCodeDev" target="_blank" rel="noopener">
+          <h3>GitHub</h3>
+          <p>@UnluckyCodeDev</p>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/gabriel-latchieu-701831436/" target="_blank" rel="noopener">
+          <h3>LinkedIn</h3>
+          <p>Gabriel Latchieu</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Gabriel Latchieu. Built with vanilla HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
