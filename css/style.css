@@ -759,3 +759,29 @@ p {
   color: var(--text-muted);
   text-align: center;
 }
+
+/* =========================================================
+   ACTIVE NAV LINK (set by scrollspy JS)
+   ========================================================= */
+
+.nav-menu a.is-active {
+  color: var(--text);
+}
+
+.nav-menu a.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hamburger → X animation when menu is open */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
