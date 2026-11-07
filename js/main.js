@@ -1,11 +1,3 @@
-/* =========================================================
-   PORTFOLIO — MAIN JAVASCRIPT
-   - Footer year
-   - Mobile nav toggle
-   - Scrollspy (highlight active section in nav)
-   - Escape key closes mobile nav
-   ========================================================= */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Footer year ---------- */
@@ -37,23 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
       isOpen ? closeMenu() : openMenu();
     });
 
-    // Close menu when a link inside it is clicked
     navLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Close menu on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
 
-    // Close menu if user resizes above mobile breakpoint
     window.addEventListener('resize', () => {
       if (window.innerWidth > 780) closeMenu();
     });
   }
 
-  /* ---------- Scrollspy: highlight active nav link ---------- */
+  /* ---------- Scrollspy ---------- */
   const sections = document.querySelectorAll('main section[id]');
   const desktopNavLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
@@ -78,20 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      rootMargin: '-40% 0px -55% 0px', // active band is the middle of viewport
+      rootMargin: '-40% 0px -55% 0px',
       threshold: 0
     });
 
     sections.forEach(section => observer.observe(section));
   }
 
-    /* ---------- Theme Toggle ---------- */
+  /* ---------- Theme Toggle ---------- */
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;
 
   function applyTheme(theme) {
     root.dataset.theme = theme;
-    // Swap icon (Moon for dark mode, Sun for light mode)
+    // Swap icon
     themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
   }
 
@@ -101,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTheme(saved);
       return;
     }
-    // If no saved theme, check OS preference. Default to dark if no preference.
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     applyTheme(prefersLight ? 'light' : 'dark');
   }
@@ -114,5 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     initTheme();
   }
-  
+
 });

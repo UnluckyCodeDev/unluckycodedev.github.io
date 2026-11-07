@@ -234,6 +234,7 @@ p {
   align-items: center;
   justify-content: space-between;
   height: 4.5rem;
+  padding-inline: var(--space-4);
 }
 
 .nav-logo {
@@ -252,6 +253,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-5);
+  margin-left: auto; 
 }
 
 .nav-menu a {
