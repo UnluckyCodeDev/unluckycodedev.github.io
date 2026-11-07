@@ -47,7 +47,7 @@
   --border:       #cbd5e1;
   --text:         #0f172a;
   --text-muted:   #475569;
-  --accent:       #0d9488; /* darker teal for contrast on white */
+  --accent:       #0d9488; 
   --accent-hover: #0f766e;
   --header-bg:    rgba(248, 250, 252, 0.85);
   --accent-soft:  rgba(13, 148, 136, 0.12);
@@ -64,7 +64,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* offset for sticky header */
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -288,7 +288,6 @@ p {
   transform-origin: left;
 }
 
-/* Hamburger — hidden on desktop, shown on mobile (JS in Step 8) */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -370,7 +369,6 @@ p {
 
 @media (max-width: 780px) {
   .nav-menu {
-    /* Base state on mobile — JS in Step 8 will toggle .is-open */
     position: absolute;
     top: 100%;
     left: 0;
@@ -790,7 +788,6 @@ p {
   transform-origin: left;
 }
 
-/* Hamburger → X animation when menu is open */
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -837,7 +834,6 @@ p {
   transform: scale(0.92);
 }
 
-/* Ensure the mobile menu works correctly with the new wrapper */
 @media (max-width: 780px) {
   .nav-right {
     gap: var(--space-3);

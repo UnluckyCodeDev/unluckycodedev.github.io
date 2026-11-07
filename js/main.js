@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyTheme(theme) {
     root.dataset.theme = theme;
-    // Swap icon
+    
     themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
   }
 
