@@ -38,6 +38,19 @@
   --transition: 180ms ease;
 }
 
+/* ---------- Light Theme Overrides ---------- */
+[data-theme="light"] {
+  --bg:           #f8fafc;
+  --bg-elev:      #ffffff;
+  --bg-elev-2:    #f1f5f9;
+  --border:       #cbd5e1;
+  --text:         #0f172a;
+  --text-muted:   #475569;
+  --accent:       #0d9488; /* darker teal for contrast on white */
+  --accent-hover: #0f766e;
+  --accent-soft:  rgba(13, 148, 136, 0.12);
+}
+
 /* ---------- Reset ---------- */
 *,
 *::before,
@@ -784,4 +797,45 @@ p {
 
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   THEME TOGGLE & NAV WRAPPER
+   ========================================================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text);
+  transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-elev-2);
+  border-color: var(--accent);
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
+/* Ensure the mobile menu works correctly with the new wrapper */
+@media (max-width: 780px) {
+  .nav-right {
+    gap: var(--space-3);
+  }
 }
